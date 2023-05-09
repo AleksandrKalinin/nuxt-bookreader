@@ -6,6 +6,7 @@
 		"page_number": 135,
 		"link": "Baskervilles.txt",
         "image": "Baskervilles.jpg",
+        "audience": "Mature",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them"
 	},	
@@ -13,9 +14,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "Equal rites",
-		"page_number": 200,
+		"page_number": 220,
 		"link": "EqualRites.txt",
         "image": "EqualRites.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],     
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."		
 	},
@@ -27,6 +29,7 @@
 		"page_number": 200,
 		"link": "Pyramids.txt",
         "image": "Pyramids.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 2}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],       
         "content": "On Discworld, a dying wizard tries to pass on his powers to an eighth son of an eighth son, who is just at that moment being born. The fact that the son is actually a daughter is discovered just a little too late. The town witch insists on turning the baby into a perfectly normal witch, thus mending the magical damage of the wizard's mistake."		
 	},
@@ -38,6 +41,7 @@
 		"page_number": 200,
 		"link": "Eric.txt",
         "image": "Eric.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 3}, {"id": 4, "score": 5}],       
         "content": "Once upon a time, there was an eighth son of an eighth son who was, of course, a wizard. As if that wasn't complicated enough, said wizard then had seven sons. And then he had an eighth son - a wizard squared (that's all the math, really). Who of course, was a source of magic - a sourcerer."		
 	},
@@ -46,9 +50,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "Guards! Guards!",
-		"page_number": 200,
+		"page_number": 230,
 		"link": "Guards!Guards!.txt",
         "image": "GuardsGuards.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 5}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],       
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."			
 	},
@@ -60,6 +65,7 @@
 		"page_number": 200,
 		"link": "CarpeJugulum.txt",
         "image": "CarpeJugulum.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],      
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"		
 	},
@@ -71,6 +77,7 @@
 		"page_number": 200,
 		"link": "FeetOfClay.txt",
         "image": "FeetOfClay.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 2}, {"id": 2, "score": 5}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],       
         "content": "In this Discworld installment, Death comes to Mort with an offer he can't refuse -- especially since being, well, dead isn't compulsory. As Death's apprentice, he'll have free board and lodging, use of the company horse, and he won't need time off for family funerals. The position is everything Mort thought he'd ever wanted, until he discovers that this perfect job can be a killer on his love life."		
 	},
@@ -79,9 +86,10 @@
 		"genre": "comedy",
 		"author": "Terry Pratchett",
 		"title": "Hogfather",
-		"page_number": 200,
+		"page_number": 400,
 		"link": "Hogfather.txt",
         "image": "Hogfather.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 5}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],     
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"		
 	},
@@ -93,6 +101,7 @@
 		"page_number": 200,
 		"link": "InterestingTimes.txt",
         "image": "InterestingTimes.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 5}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],      
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."			
 	},							
@@ -104,6 +113,7 @@
 		"page_number": 200,
 		"link": "Jingo.txt",
         "image": "Jingo.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 5}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],       
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."			
 	},
@@ -115,6 +125,7 @@
 		"page_number": 200,
 		"link": "LordsAndLadies.txt",
         "image": "LordsAndLadies.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],       
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"			
 	},
@@ -126,6 +137,7 @@
 		"page_number": 200,
 		"link": "Maskerade.txt",
         "image": "Maskerade.jpg",
+        "audience": "Mature",
         "rating": [{"id": 1, "score": 2}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],        
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."			
 	},
@@ -134,9 +146,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "Men At Arms",
-		"page_number": 200,
+		"page_number": 500,
 		"link": "MenAtArms.txt",		
         "image": "MenAtArms.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "But it can. And it has. So what happens after death is now less of a philosophical question than a question of actual reality. On the Disc, as here, they need Death. If Death doesn't come for you, then what are you supposed to do in the meantime? You can't have the undead wandering about like lost souls. There's no telling what might happen, particularly when they discover that life really is only for the living..."		
 	},
@@ -148,6 +161,7 @@
 		"page_number": 200,
 		"link": "Mort.txt",
 	    "image": "Mort.jpg",
+	    "audience": "Teen",
 	    "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 1}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"		
 	},
@@ -159,6 +173,7 @@
 		"page_number": 200,
 		"link": "Moving Pictures.txt",
         "image": "MovingPictures.jpg",
+        "audience": "General audience",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "In The Light Fantastic only one individual can save the world from a disastrous collision. Unfortunately, the hero happens to be the singularly inept wizard Rincewind, who was last seen falling off the edge of the world..."		
 	},
@@ -167,9 +182,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "Reaper man",
-		"page_number": 200,
+		"page_number": 600,
 		"link": "ReaperMan.txt",		
         "image": "ReaperMan.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 4}, {"id": 4, "score": 5}],
         "content": "But it can. And it has. So what happens after death is now less of a philosophical question than a question of actual reality. On the Disc, as here, they need Death. If Death doesn't come for you, then what are you supposed to do in the meantime? You can't have the undead wandering about like lost souls. There's no telling what might happen, particularly when they discover that life really is only for the living..."		
 	},
@@ -181,6 +197,7 @@
 		"page_number": 200,
 		"link": "SmallGods.txt",
         "image": "SmallGods.jpg",
+        "audience": "General audience",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "It's hard to grow up normally when Grandfather rides a white horse and wields a scythe – especially when you have to take over the family business, and everyone mistakes you for the Tooth Fairy. And especially when you have to face the new and addictive music that has entered Discworld. It's lawless. It changes people. It's called Music With Rocks In. It's got a beat and you can dance to it, but... It's alive. And it won't fade away."		
 	},								
@@ -189,9 +206,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "Soul music",
-		"page_number": 200,
+		"page_number": 400,
 		"link": "SoulMusic.txt",		
         "image": "SoulMusic.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 2}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "In The Light Fantastic only one individual can save the world from a disastrous collision. Unfortunately, the hero happens to be the singularly inept wizard Rincewind, who was last seen falling off the edge of the world..."				
 	},
@@ -203,6 +221,7 @@
 		"page_number": 200,
 		"link": "TheFifthElephant.txt",	
         "image": "TheFifthElephant.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 1}, {"id": 4, "score": 5}],
         "content": "But it can. And it has. So what happens after death is now less of a philosophical question than a question of actual reality. On the Disc, as here, they need Death. If Death doesn't come for you, then what are you supposed to do in the meantime? You can't have the undead wandering about like lost souls. There's no telling what might happen, particularly when they discover that life really is only for the living..."				
 	},
@@ -211,9 +230,10 @@
 		"genre": "fantasy",
 		"author": "Terry Pratchett",
 		"title": "The last continent",
-		"page_number": 200,
+		"page_number": 300,
 		"link": "TheLastContinent.txt",	
         "image": "TheLastContinent.jpg",
+        "audience": "General audience",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 3}],
         "content": "On Discworld, a dying wizard tries to pass on his powers to an eighth son of an eighth son, who is just at that moment being born. The fact that the son is actually a daughter is discovered just a little too late. The town witch insists on turning the baby into a perfectly normal witch, thus mending the magical damage of the wizard's mistake."					
 	},
@@ -225,6 +245,7 @@
 		"page_number": 200,
 		"link": "TheTruth.txt",	
         "image": "TheTruth.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 3}, {"id": 4, "score": 5}],
         "content": "On Discworld, a dying wizard tries to pass on his powers to an eighth son of an eighth son, who is just at that moment being born. The fact that the son is actually a daughter is discovered just a little too late. The town witch insists on turning the baby into a perfectly normal witch, thus mending the magical damage of the wizard's mistake."				
 	},				
@@ -236,6 +257,7 @@
 		"page_number": 200,
 		"link": "ThiefOfTime.txt",	
         "image": "ThiefOfTime.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"					
 	},
@@ -247,6 +269,7 @@
 		"page_number": 200,
 		"link": "WitchesAbroad.txt",		
         "image": "WitchesAbroad.jpg",
+        "audience": "General audience",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 2}, {"id": 4, "score": 5}],
         "content": "On a world supported on the back of a giant turtle (sex unknown), a gleeful, explosive, wickedly eccentric expedition sets out. There's an avaricious but inept wizard, a naive tourist whose luggage moves on hundreds of dear little legs, dragons who only exist if you believe in them, and of course THE EDGE of the planet..."				
 	},
@@ -258,6 +281,7 @@
 		"page_number": 200,
 		"link": "TheLightFantastic.txt",		
         "image": "TheLightFantastic.jpg",
+        "audience": "Teen",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 3}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "In this Discworld installment, Death comes to Mort with an offer he can't refuse -- especially since being, well, dead isn't compulsory. As Death's apprentice, he'll have free board and lodging, use of the company horse, and he won't need time off for family funerals. The position is everything Mort thought he'd ever wanted, until he discovers that this perfect job can be a killer on his love life."				
 	},
@@ -269,6 +293,7 @@
 		"page_number": 200,
 		"link": "Soursery.txt",		
         "image": "Sourcery.jpg",
+        "audience": "General audience",
         "rating": [{"id": 1, "score": 4}, {"id": 2, "score": 2}, {"id": 3, "score": 5}, {"id": 4, "score": 5}],
         "content": "For a policeman, there can be few things worse than a serial killer at loose in your city. Except, perhaps, a serial killer who targets coppers, and a city on the brink of bloody revolution. The people have found their voice at last, the flags and barricades are rising...And the question for a policeman, an officer of the law, a defender of the peace, is: are you with them, or are you against them?"					
 	}					
