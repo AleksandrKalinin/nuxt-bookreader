@@ -36,15 +36,7 @@
       </v-chip-group>
     </div>
     <v-card-actions>
-      <v-btn
-        @click="consoleRatings"
-        color="deep-purple-lighten-2"
-        class="w-100"
-        variant="flat"
-        size="large"
-      >
-        Open
-      </v-btn>
+      <NuxtLink :to="routes[index]" class="btn-link">Open</NuxtLink>
     </v-card-actions>
   </v-card>
 </template>
@@ -68,6 +60,12 @@ const reviews = computed(() => {
   });
 });
 
+const routes = computed(() => {
+  return props.books.map((item) => {
+    return `/books/${item.id}`;
+  });
+});
+
 const consoleRatings = () => {
   const val = props.books.map((item) => {
     return (
@@ -76,15 +74,25 @@ const consoleRatings = () => {
       }, 0) / item.rating.length
     );
   });
-  console.log(val);
 };
-
-const rating = ref(3);
 </script>
 
 <style scoped>
 .book-description {
   max-height: 118px;
   overflow: hidden;
+}
+
+.btn-link {
+  background-color: #ff6347;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  text-align: center;
 }
 </style>
