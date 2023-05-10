@@ -33,11 +33,25 @@
                   @click="nextPage"
                 ></v-icon>
               </div>
+              <SettingsModal>
+                <template v-slot:nameBtn>Font settings</template>
+                <template v-slot:header>Set font settings</template>
+              </SettingsModal>
               <div class="navigation-items__icon navigation-icon">
-                <v-icon icon="mdi-format-letter-case" size="40px"></v-icon>
+                <v-icon
+                  icon="mdi-format-letter-case"
+                  size="40px"
+                  @click="settings.modalOpen = true"
+                >
+                </v-icon>
               </div>
               <div class="navigation-items__icon navigation-icon">
-                <v-icon icon="mdi-palette-outline" size="40px"></v-icon>
+                <v-icon
+                  icon="mdi-palette-outline"
+                  size="40px"
+                  @click="settings.modalOpen = true"
+                >
+                </v-icon>
               </div>
             </div>
           </div>
@@ -49,7 +63,9 @@
 
 <script setup lang="ts">
 import { useBooksStore } from "~/stores/books";
+import { useSettingsStore } from "~/stores/settings";
 const store = useBooksStore();
+const settings = useSettingsStore();
 
 const currentPage = computed(() => {
   return store.currentPageIndex;
@@ -65,10 +81,6 @@ const prevPage = () => {
   if (currentPage.value > 1) {
     store.setCurrentPageIndex(store.currentPageIndex - 1);
   }
-};
-
-const setActivePage = () => {
-  console.log("fafeef");
 };
 </script>
 

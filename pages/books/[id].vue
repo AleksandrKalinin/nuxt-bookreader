@@ -1,8 +1,10 @@
 <template>
   <v-app>
-    <Header />
-    <NavigationBar />
-    <SelectedBook :selectedBook="selectedBook" />
+    <div id="teleportId">
+      <Header />
+      <NavigationBar />
+      <SelectedBook :selectedBook="selectedBook" />
+    </div>
   </v-app>
 </template>
 

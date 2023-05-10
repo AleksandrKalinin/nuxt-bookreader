@@ -28,11 +28,11 @@
 
 <script setup lang="ts">
 import { useBooksStore } from "~/stores/books";
-import { useSettinsStore } from "~/stores/settings";
+import { useSettingsStore } from "~/stores/settings";
 
 const props = defineProps(["selectedBook"]);
 const store = useBooksStore();
-const settings = useSettinsStore();
+const settings = useSettingsStore();
 
 const pageIndexes: Ref<number[]> = ref([]);
 const pages: Ref<string[]> = ref([]);
@@ -54,15 +54,15 @@ const splitIntoPages = () => {
   let pagesCount = Math.ceil(text.length / value);
   let min = 0;
   let max = value;
+
   for (let i = 0; i < pagesCount; i++) {
     let txt = text.slice(min, max);
+    tempIndexes.push(i);
     tempPages.push(txt);
     min += step;
     max += step;
   }
-  for (let i = 0; i < pagesCount; i++) {
-    tempIndexes.push(i);
-  }
+
   pages.value = tempPages;
   pageIndexes.value = tempIndexes;
   store.setCurrentBook(tempPages);
