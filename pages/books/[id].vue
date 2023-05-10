@@ -2,14 +2,24 @@
   <v-app>
     <Header />
     <NavigationBar />
-    <SelectedBook />
+    <SelectedBook :selectedBook="selectedBook" />
   </v-app>
 </template>
 
 <script setup lang="ts">
+import { useBooksStore } from "~/stores/books";
 const route = useRoute();
-console.log(route.params.id);
-console.log(route.params.id);
+const id = ref(route.params.id);
+
+const store = useBooksStore();
+
+const selectedBook = computed(() => {
+  return store.selectedBook;
+});
+
+onMounted(() => {
+  store.fetchSelectedBook(id.value as string);
+});
 </script>
 
 <style scoped></style>

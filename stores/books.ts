@@ -32,6 +32,25 @@ export const useBooksStore = defineStore("books", () => {
     }
   }
 
+  const selectedBook: Ref<null | string | string[]> = ref(null);
+
+  function fetchSelectedBook(id: string) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "text/plain; charset=UTF-8");
+    fetch(`./${id}.txt`)
+      .then((response) => response.arrayBuffer())
+      .then(function (buffer) {
+        const decoder = new TextDecoder("iso-8859-1");
+        let text = decoder.decode(buffer).split("\n");
+        return text;
+      })
+      .then((txt) => (selectedBook.value = txt));
+    /*
+    fetch(`./${id}.txt`)
+      .then((res) => res.text())
+      .then((txt) => (selectedBook.value = txt)); */
+  }
+
   return {
     fetchBooks,
     isLoaded,
@@ -42,5 +61,7 @@ export const useBooksStore = defineStore("books", () => {
     genre,
     audience,
     size,
+    fetchSelectedBook,
+    selectedBook,
   };
 });
