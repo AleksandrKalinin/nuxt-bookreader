@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 
 export const useSettingsStore = defineStore("settings", () => {
   const fontColor = ref("black");
+  const backgroundColor = ref("white");
   const fontSize = ref(24);
   const lineHeight = computed(() => fontSize.value * 1.5);
   const fontWeight = ref(400);
@@ -16,8 +17,10 @@ export const useSettingsStore = defineStore("settings", () => {
   ]);
 
   const modalOpen = ref(false);
+  const colorModal = ref(false);
 
   return {
+    backgroundColor,
     fontColor,
     fontSize,
     lineHeight,
@@ -25,5 +28,6 @@ export const useSettingsStore = defineStore("settings", () => {
     fontFamily,
     availableFonts,
     modalOpen,
+    colorModal,
   };
 });

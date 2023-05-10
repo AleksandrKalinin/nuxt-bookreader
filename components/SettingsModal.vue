@@ -1,6 +1,6 @@
 <template>
   <Teleport to="#teleportId">
-    <div v-if="settings.modalOpen" class="overlay">
+    <div class="overlay">
       <div
         class="pa-12 bg-grey-lighten-5"
         width="750px"
@@ -36,16 +36,6 @@
               :items="settings.availableFonts"
               density="compact"
             ></v-select>
-          </div>
-          <div
-            class="d-flex justify-center align-center text-preview text-center"
-            :style="{
-              fontSize: size + 'px',
-              fontFamily: family,
-              fontWeight: weight,
-            }"
-          >
-            Sample text
           </div>
         </div>
         <v-btn

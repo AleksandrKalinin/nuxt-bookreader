@@ -33,10 +33,6 @@
                   @click="nextPage"
                 ></v-icon>
               </div>
-              <SettingsModal>
-                <template v-slot:nameBtn>Font settings</template>
-                <template v-slot:header>Set font settings</template>
-              </SettingsModal>
               <div class="navigation-items__icon navigation-icon">
                 <v-icon
                   icon="mdi-format-letter-case"
@@ -49,7 +45,7 @@
                 <v-icon
                   icon="mdi-palette-outline"
                   size="40px"
-                  @click="settings.modalOpen = true"
+                  @click="settings.colorModal = true"
                 >
                 </v-icon>
               </div>
