@@ -6,14 +6,14 @@
           <div
             class="selected-book__content book-content"
             :style="{
-              color: fontColor,
-              fontSize: fontSize + 'px',
-              fontWeight: fontWeight,
-              lineHeight: lineHeight + 'px',
-              fontFamily,
+              color: settings.fontColor,
+              fontSize: settings.fontSize + 'px',
+              fontWeight: settings.fontWeight,
+              lineHeight: settings.lineHeight + 'px',
+              fontFamily: settings.fontFamily,
             }"
           >
-            <div class="book-content__inner" v-if="currentPage.length > 0">
+            <div class="book-content__inner" v-if="currentPage">
               <p v-for="item in currentPage">
                 {{ item }}
               </p>
@@ -27,15 +27,13 @@
 </template>
 
 <script setup lang="ts">
+import { useBooksStore } from "~/stores/books";
+import { useSettinsStore } from "~/stores/settings";
+
 const props = defineProps(["selectedBook"]);
+const store = useBooksStore();
+const settings = useSettinsStore();
 
-const fontColor = ref("black");
-const fontSize = ref(24);
-const lineHeight = ref(fontSize.value * 1.5);
-const fontWeight = ref(400);
-const fontFamily = ref("Times New Roman");
-
-const currentPage = ref([]);
 const pageIndexes: Ref<number[]> = ref([]);
 const pages: Ref<string[]> = ref([]);
 
@@ -43,16 +41,17 @@ const selectedBook = computed(() => {
   return props.selectedBook;
 });
 
+const currentPage = computed(() => {
+  return store.currentPage;
+});
+
 const splitIntoPages = () => {
   const tempPages = [];
   const tempIndexes = [];
   let text = selectedBook.value;
-  console.log("text", text.length);
-  let value = Math.ceil(1600 / lineHeight.value);
+  let value = Math.ceil(1600 / settings.lineHeight);
   const step = value;
   let pagesCount = Math.ceil(text.length / value);
-  console.log("value", value);
-  console.log("pagesCOunt", pagesCount);
   let min = 0;
   let max = value;
   for (let i = 0; i < pagesCount; i++) {
@@ -66,7 +65,7 @@ const splitIntoPages = () => {
   }
   pages.value = tempPages;
   pageIndexes.value = tempIndexes;
-  currentPage.value = tempPages[0];
+  store.setCurrentBook(tempPages);
 };
 
 watch(selectedBook, () => {

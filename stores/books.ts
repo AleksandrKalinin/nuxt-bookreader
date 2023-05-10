@@ -45,10 +45,21 @@ export const useBooksStore = defineStore("books", () => {
         return text;
       })
       .then((txt) => (selectedBook.value = txt));
-    /*
-    fetch(`./${id}.txt`)
-      .then((res) => res.text())
-      .then((txt) => (selectedBook.value = txt)); */
+  }
+
+  const currentBook: Ref<string[]> = ref([]);
+  const currentPageIndex = ref(1);
+  const totalPages = computed(() => currentBook.value.length);
+  const currentPage = computed(
+    () => currentBook.value[currentPageIndex.value - 1]
+  );
+
+  function setCurrentBook(book: string[]) {
+    currentBook.value = book;
+  }
+
+  function setCurrentPageIndex(index: number) {
+    currentPageIndex.value = index;
   }
 
   return {
@@ -63,5 +74,11 @@ export const useBooksStore = defineStore("books", () => {
     size,
     fetchSelectedBook,
     selectedBook,
+    currentPageIndex,
+    setCurrentPageIndex,
+    totalPages,
+    currentPage,
+    currentBook,
+    setCurrentBook,
   };
 });

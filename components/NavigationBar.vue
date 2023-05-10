@@ -5,10 +5,16 @@
         <v-col>
           <div class="navigation-wrapper d-flex align-center">
             <div class="navigation-wrapper__input">
-              <v-slider v-model="slider1" color="#ff6347"></v-slider>
+              <v-slider
+                v-model="store.currentPageIndex"
+                color="#ff6347"
+                step="1"
+                min="1"
+                :max="store.totalPages"
+              ></v-slider>
             </div>
             <div class="page_count d-flex justify-center text-h5 text-white">
-              {{ Math.round(slider1) }}/100
+              {{ store.currentPageIndex }}/{{ store.totalPages }}
             </div>
             <div
               class="navigation-items d-flex align-center justify-space-between text-white"
@@ -42,14 +48,27 @@
 </template>
 
 <script setup lang="ts">
-const slider1 = ref(0);
+import { useBooksStore } from "~/stores/books";
+const store = useBooksStore();
+
+const currentPage = computed(() => {
+  return store.currentPageIndex;
+});
 
 const nextPage = () => {
-  slider1.value += 1;
+  if (currentPage.value < store.totalPages) {
+    store.setCurrentPageIndex(store.currentPageIndex + 1);
+  }
 };
 
 const prevPage = () => {
-  slider1.value -= 1;
+  if (currentPage.value > 1) {
+    store.setCurrentPageIndex(store.currentPageIndex - 1);
+  }
+};
+
+const setActivePage = () => {
+  console.log("fafeef");
 };
 </script>
 
