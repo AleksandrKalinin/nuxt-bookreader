@@ -1,11 +1,9 @@
 <template>
-  <div class="cards-wrapper">
-    <BookCard v-if="isLoaded" :books="filteredBooks" />
-    <template v-else>
-      <div class="preloader">
-        <img src="./preloader.gif" />
-      </div>
-    </template>
+  <div class="cards-wrapper" v-if="isLoaded">
+    <BookCard :books="filteredBooks" />
+  </div>
+  <div class="preloader" v-else>
+    <img src="~/assets/preloader.gif" />
   </div>
 </template>
 <script setup>
@@ -41,5 +39,14 @@ onMounted(() => {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

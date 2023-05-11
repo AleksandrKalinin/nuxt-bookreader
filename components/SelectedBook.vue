@@ -1,7 +1,5 @@
 <template>
   <div class="selected-book">
-    <CustomModal />
-    <ColorModal />
     <SettingsModal v-if="true" />
     <v-container>
       <v-row>

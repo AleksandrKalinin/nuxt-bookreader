@@ -1,8 +1,9 @@
 <template>
+  <Header />
   <v-container>
     <v-row>
       <v-col>
-        <main class="d-flex py-12">
+        <main class="d-flex py-12 fullscreen">
           <BookSidebar />
           <BookList />
         </main>
@@ -16,5 +17,9 @@ const items = ref([]);
 <style scoped>
 .sidebar {
   width: 300px;
+}
+.fullscreen {
+  width: 100%;
+  height: 100%;
 }
 </style>
