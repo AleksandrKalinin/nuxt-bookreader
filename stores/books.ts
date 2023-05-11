@@ -16,25 +16,25 @@ export const useBooksStore = defineStore("books", () => {
   const audience: Ref<string | null> = ref(null);
   const size: Ref<number | null> = ref(null);
 
-  function setGenre(value: string | null) {
+  const setGenre = (value: string | null) => {
     genre.value = value;
-  }
+  };
 
-  function setAudience(value: string | null) {
+  const setAudience = (value: string | null) => {
     audience.value = value;
-  }
+  };
 
-  function setSize(value: { title: string; max: number } | null) {
+  const setSize = (value: { title: string; max: number } | null) => {
     if (value?.max) {
       size.value = value.max;
     } else {
       size.value = null;
     }
-  }
+  };
 
   const selectedBook: Ref<null | string | string[]> = ref(null);
 
-  function fetchSelectedBook(id: string) {
+  const fetchSelectedBook = (id: string) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "text/plain; charset=UTF-8");
     fetch(`./${id}.txt`)
@@ -45,22 +45,41 @@ export const useBooksStore = defineStore("books", () => {
         return text;
       })
       .then((txt) => (selectedBook.value = txt));
-  }
+  };
 
   const currentBook: Ref<string[]> = ref([]);
   const currentPageIndex = ref(1);
   const totalPages = computed(() => currentBook.value.length);
+
   const currentPage = computed(
     () => currentBook.value[currentPageIndex.value - 1]
   );
 
-  function setCurrentBook(book: string[]) {
+  const setCurrentBook = (book: string[]) => {
     currentBook.value = book;
-  }
+  };
 
-  function setCurrentPageIndex(index: number) {
+  const setCurrentPageIndex = (index: number) => {
     currentPageIndex.value = index;
-  }
+  };
+
+  const nextPage = () => {
+    if (currentPageIndex.value < totalPages.value) {
+      setCurrentPageIndex(currentPageIndex.value + 1);
+      scrollToTop();
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPageIndex.value > 1) {
+      setCurrentPageIndex(currentPageIndex.value - 1);
+      scrollToTop();
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
 
   return {
     fetchBooks,
@@ -80,5 +99,7 @@ export const useBooksStore = defineStore("books", () => {
     currentPage,
     currentBook,
     setCurrentBook,
+    nextPage,
+    prevPage,
   };
 });

@@ -17,7 +17,6 @@ export const useSettingsStore = defineStore("settings", () => {
   ]);
 
   const modalOpen = ref(false);
-  const colorModal = ref(false);
 
   return {
     backgroundColor,
@@ -28,6 +27,5 @@ export const useSettingsStore = defineStore("settings", () => {
     fontFamily,
     availableFonts,
     modalOpen,
-    colorModal,
   };
 });

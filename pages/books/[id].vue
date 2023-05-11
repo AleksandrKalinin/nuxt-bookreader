@@ -4,6 +4,7 @@
       <Header />
       <NavigationBar />
       <SelectedBook :selectedBook="selectedBook" />
+      <NavigationBar />
     </div>
   </v-app>
 </template>

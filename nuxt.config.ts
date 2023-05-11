@@ -2,7 +2,11 @@
 import vuetify from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
-  css: ["vuetify/styles", "@mdi/font/css/materialdesignicons.min.css"],
+  css: [
+    "vuetify/styles",
+    "@mdi/font/css/materialdesignicons.min.css",
+    "~/assets/css/main.css",
+  ],
   vite: {
     ssr: {
       noExternal: ["vuetify"], // add the vuetify vite plugin

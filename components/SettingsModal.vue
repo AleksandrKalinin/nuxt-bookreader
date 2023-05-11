@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="#teleportId">
+  <Teleport to="body">
     <div class="overlay">
       <div
         class="pa-12 bg-grey-lighten-5"
@@ -7,36 +7,80 @@
         min-height="350"
         height="auto"
       >
-        <h5 class="text-h5 text-center">Font Settings</h5>
-        <div class="settings-input">
-          <div class="py-5 settings-input__item settings-input">
-            <span class="pr-5 settings-input__caption">Font size</span>
-            <v-slider
-              v-model="size"
-              color="#ff6347"
-              step="1"
-              min="16"
-              max="32"
-            ></v-slider>
+        <div class="settings-block">
+          <h5 class="text-h5 text-center">Font Settings</h5>
+          <div class="settings-input">
+            <div class="py-5 settings-input__item settings-input">
+              <span class="pr-5 settings-input__caption">Font size</span>
+              <v-slider
+                v-model="size"
+                color="#ff6347"
+                step="1"
+                min="16"
+                max="32"
+              ></v-slider>
+            </div>
+            <div class="py-5 settings-input__item settings-input">
+              <span class="pr-5 settings-input__caption">Font weight</span>
+              <v-slider
+                v-model="weight"
+                color="#ff6347"
+                step="100"
+                min="300"
+                max="900"
+              ></v-slider>
+            </div>
+            <div class="py-5 settings-input__item settings-input">
+              <span class="pr-5 settings-input__caption">Font weight</span>
+              <v-select
+                v-model="family"
+                :items="settings.availableFonts"
+                density="compact"
+              ></v-select>
+            </div>
           </div>
-          <div class="py-5 settings-input__item settings-input">
-            <span class="pr-5 settings-input__caption">Font weight</span>
-            <v-slider
-              v-model="weight"
-              color="#ff6347"
-              step="100"
-              min="300"
-              max="900"
-            ></v-slider>
+        </div>
+        <div class="settings-block">
+          <h5 class="text-h5 text-center">Color Settings</h5>
+          <div class="d-flex justify-space-between colors-container">
+            <div class="d-flex flex-column colors-section py-5 d-flex">
+              <h6 class="text-h6 mb-4 text-center">Font color</h6>
+              <div class="colors-section__items color-options">
+                <div
+                  v-for="item in colors"
+                  class="color-options__item color-option"
+                  :style="{ backgroundColor: 'rgb(' + item.join(', ') + ')' }"
+                  :data-color="'rgb(' + item.join(', ') + ')'"
+                  @click="setFontColor($event)"
+                ></div>
+              </div>
+            </div>
+            <div class="d-flex flex-column colors-section py-5">
+              <h6 class="text-h6 mb-4 text-center">Background color</h6>
+              <div class="colors-section__items color-options">
+                <div
+                  v-for="item in colors"
+                  class="color-options__item color-option"
+                  :style="{ backgroundColor: 'rgb(' + item.join(', ') + ')' }"
+                  :data-color="'rgb(' + item.join(', ') + ')'"
+                  @click="setBackgroundColor($event)"
+                ></div>
+              </div>
+            </div>
           </div>
-          <div class="py-5 settings-input__item settings-input">
-            <span class="pr-5 settings-input__caption">Font weight</span>
-            <v-select
-              v-model="family"
-              :items="settings.availableFonts"
-              density="compact"
-            ></v-select>
-          </div>
+        </div>
+
+        <div
+          class="d-flex justify-center align-center text-preview text-center"
+          :style="{
+            backgroundColor,
+            color: fontColor,
+            fontWeight: weight,
+            fontFamily: family,
+            fontSize: size + 'px',
+          }"
+        >
+          Sample text
         </div>
         <v-btn
           class="text-white"
@@ -55,18 +99,52 @@
 <script setup lang="ts">
 import { useSettingsStore } from "~/stores/settings";
 const settings = useSettingsStore();
+const modalOpen = computed(() => settings.modalOpen);
 
 const size = ref(settings.fontSize);
 const weight = ref(settings.fontWeight);
 const family = ref(settings.fontFamily);
+
+const basicColor = [0, 0, 0];
+const backgroundColor = ref(settings.backgroundColor);
+const fontColor = ref(settings.fontColor);
+
+const colors = computed(() => {
+  let arr = [];
+  for (let i = 0; i < 15; i++) {
+    const item = [];
+    for (let j = 0; j < 3; j++) {
+      item.push(basicColor[j] + 17 * (i + 1));
+    }
+    arr.push(item);
+  }
+  return arr;
+});
+
+const setBackgroundColor = (e: MouseEvent) => {
+  if (e.target instanceof Element) {
+    const color = e.target.getAttribute("data-color");
+    color !== null ? (backgroundColor.value = color) : backgroundColor;
+  }
+};
+
+const setFontColor = (e: MouseEvent) => {
+  if (e.target instanceof Element) {
+    const color = e.target.getAttribute("data-color");
+    color !== null ? (fontColor.value = color) : fontColor;
+  }
+};
+
 const applySettings = () => {
   settings.fontSize = size.value;
   settings.fontWeight = weight.value;
   settings.fontFamily = family.value;
+  settings.backgroundColor = backgroundColor.value;
+  settings.fontColor = fontColor.value;
   settings.modalOpen = false;
 };
 </script>
-<style>
+<style scoped>
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -95,5 +173,54 @@ const applySettings = () => {
 
 .text-preview {
   height: 150px;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  background: rgba(51, 51, 51, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-input__item {
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.settings-input__caption {
+  width: 140px;
+  font-size: 20px;
+}
+
+.text-preview {
+  height: 150px;
+}
+
+.colors-container {
+  width: 460px;
+}
+
+.color-options {
+  width: 220px;
+  height: 130px;
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+}
+.color-option {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.settings-block {
+  margin-bottom: 24px;
 }
 </style>
