@@ -1,19 +1,24 @@
 <template>
-  <div class="selected-book">
-    <SettingsModal v-if="true" />
-    <v-container>
+  <div
+    class="selected-book"
+    tabindex="0"
+    @keydown.left="store.prevPage"
+    @keydown.right="store.nextPage"
+  >
+    <SettingsModal v-if="modalOpen === true" />
+    <v-container
+      :style="{
+        backgroundColor: settings.backgroundColor,
+        color: settings.fontColor,
+        fontSize: settings.fontSize + 'px',
+        fontWeight: settings.fontWeight,
+        lineHeight: settings.lineHeight + 'px',
+        fontFamily: settings.fontFamily,
+      }"
+    >
       <v-row>
         <v-col>
-          <div
-            class="selected-book__content book-content"
-            :style="{
-              color: settings.fontColor,
-              fontSize: settings.fontSize + 'px',
-              fontWeight: settings.fontWeight,
-              lineHeight: settings.lineHeight + 'px',
-              fontFamily: settings.fontFamily,
-            }"
-          >
+          <div class="selected-book__content book-content">
             <div class="book-content__inner" v-if="currentPage">
               <p v-for="item in currentPage">
                 {{ item }}
@@ -34,6 +39,8 @@ import { useSettingsStore } from "~/stores/settings";
 const props = defineProps(["selectedBook"]);
 const store = useBooksStore();
 const settings = useSettingsStore();
+
+const modalOpen = computed(() => settings.modalOpen);
 
 const pageIndexes: Ref<number[]> = ref([]);
 const pages: Ref<string[]> = ref([]);

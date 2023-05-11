@@ -23,14 +23,14 @@
                 <v-icon
                   icon="mdi-arrow-left-thin"
                   size="40px"
-                  @click="prevPage"
+                  @click="store.prevPage"
                 ></v-icon>
               </div>
               <div class="navigation-items__icon navigation-icon">
                 <v-icon
                   icon="mdi-arrow-right-thin"
                   size="40px"
-                  @click="nextPage"
+                  @click="store.nextPage"
                 ></v-icon>
               </div>
               <div class="navigation-items__icon navigation-icon">
@@ -58,18 +58,6 @@ const settings = useSettingsStore();
 const currentPage = computed(() => {
   return store.currentPageIndex;
 });
-
-const nextPage = () => {
-  if (currentPage.value < store.totalPages) {
-    store.setCurrentPageIndex(store.currentPageIndex + 1);
-  }
-};
-
-const prevPage = () => {
-  if (currentPage.value > 1) {
-    store.setCurrentPageIndex(store.currentPageIndex - 1);
-  }
-};
 </script>
 
 <style scoped>

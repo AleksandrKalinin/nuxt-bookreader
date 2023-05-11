@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="#teleportId">
+  <Teleport to="body">
     <div class="overlay">
       <div
         class="pa-12 bg-grey-lighten-5"
@@ -77,7 +77,7 @@
             color: fontColor,
             fontWeight: weight,
             fontFamily: family,
-            fontSize: size,
+            fontSize: size + 'px',
           }"
         >
           Sample text
@@ -99,16 +99,15 @@
 <script setup lang="ts">
 import { useSettingsStore } from "~/stores/settings";
 const settings = useSettingsStore();
+const modalOpen = computed(() => settings.modalOpen);
 
 const size = ref(settings.fontSize);
 const weight = ref(settings.fontWeight);
 const family = ref(settings.fontFamily);
 
 const basicColor = [0, 0, 0];
-const backgroundColor = computed(() => settings.backgroundColor);
-const fontColor = computed(() => settings.fontColor);
-const fontWeight = computed(() => settings.fontWeight);
-const fontFamily = computed(() => settings.fontFamily);
+const backgroundColor = ref(settings.backgroundColor);
+const fontColor = ref(settings.fontColor);
 
 const colors = computed(() => {
   let arr = [];
@@ -124,17 +123,15 @@ const colors = computed(() => {
 
 const setBackgroundColor = (e: MouseEvent) => {
   if (e.target instanceof Element) {
-    const bgColor = e.target.getAttribute("data-color");
-    bgColor !== null
-      ? (settings.backgroundColor = bgColor)
-      : settings.backgroundColor;
+    const color = e.target.getAttribute("data-color");
+    color !== null ? (backgroundColor.value = color) : backgroundColor;
   }
 };
 
 const setFontColor = (e: MouseEvent) => {
   if (e.target instanceof Element) {
-    const fontColor = e.target.getAttribute("data-color");
-    fontColor !== null ? (settings.fontColor = fontColor) : settings.fontColor;
+    const color = e.target.getAttribute("data-color");
+    color !== null ? (fontColor.value = color) : fontColor;
   }
 };
 
@@ -142,6 +139,8 @@ const applySettings = () => {
   settings.fontSize = size.value;
   settings.fontWeight = weight.value;
   settings.fontFamily = family.value;
+  settings.backgroundColor = backgroundColor.value;
+  settings.fontColor = fontColor.value;
   settings.modalOpen = false;
 };
 </script>

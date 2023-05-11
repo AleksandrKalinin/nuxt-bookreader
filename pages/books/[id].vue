@@ -1,12 +1,11 @@
 <template>
   <v-app>
-    <v-layout>
-      <div id="teleportId">
-        <Header />
-        <NavigationBar />
-        <SelectedBook :selectedBook="selectedBook" />
-      </div>
-    </v-layout>
+    <div id="teleportId">
+      <Header />
+      <NavigationBar />
+      <SelectedBook :selectedBook="selectedBook" />
+      <NavigationBar />
+    </div>
   </v-app>
 </template>
 
