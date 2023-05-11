@@ -35,17 +35,9 @@
               </div>
               <div class="navigation-items__icon navigation-icon">
                 <v-icon
-                  icon="mdi-format-letter-case"
+                  icon="mdi-cog"
                   size="40px"
                   @click="settings.modalOpen = true"
-                >
-                </v-icon>
-              </div>
-              <div class="navigation-items__icon navigation-icon">
-                <v-icon
-                  icon="mdi-palette-outline"
-                  size="40px"
-                  @click="settings.colorModal = true"
                 >
                 </v-icon>
               </div>
